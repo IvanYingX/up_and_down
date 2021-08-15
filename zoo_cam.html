@@ -61,7 +61,8 @@
     }
     
     function beep() {
-        var snd = new Audio("https://aicoreassessments.s3.amazonaws.com/Duck-quack.mp3");  
+        var snd = new Audio("https://aicoreassessments.s3.amazonaws.com/Duck-quack.mp3");
+        snd.loop = false;
         snd.play();
     }
 </script>
