@@ -58,10 +58,16 @@
         }
         if (prediction[1].probability > 0.7){
             beep();
+        } else {
+            beep_stop();
         }
     }
     
     function beep() {
         snd.play();
+    }
+    function beep_stop() {
+        snd.pause();
+        soundPlayer.currentTime = 0;
     }
 </script>
