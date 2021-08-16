@@ -10,7 +10,8 @@
 
     // the link to your model provided by Teachable Machine export panel
     const URL = "https://teachablemachine.withgoogle.com/models/t3guFgJ_V/";
-
+    var snd = new Audio("https://aicoreassessments.s3.amazonaws.com/Duck-quack.mp3");
+    snd.loop = false;
     let model, webcam, labelContainer, maxPredictions;
 
     // Load the image model and setup the webcam
@@ -61,8 +62,7 @@
     }
     
     function beep() {
-        var snd = new Audio("https://aicoreassessments.s3.amazonaws.com/Duck-quack.mp3");
-        snd.loop = false;
+        snd.load();
         snd.play();
     }
 </script>
