@@ -58,12 +58,12 @@
                 prediction[i].className + ": " + prediction[i].probability.toFixed(2);
             labelContainer.childNodes[i].innerHTML = classPrediction;
         }
-        if (prediction[1].probability > 0.7){
+        if (prediction[0].probability > 0.7){
             kirby_beep();
         } else {
             kirby_stop();
         }
-        if (prediction[2].probability > 0.7){
+        if (prediction[1].probability > 0.7){
             pika_beep();
         } else {
             pika_stop();
