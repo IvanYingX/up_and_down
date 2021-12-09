@@ -9,8 +9,10 @@
     // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
 
     // the link to your model provided by Teachable Machine export panel
-    const URL = "https://teachablemachine.withgoogle.com/models/t3guFgJ_V/";
+    const URL = "https://teachablemachine.withgoogle.com/models/3CSc9c1gO/";
     var snd = new Audio("https://aicoreassessments.s3.amazonaws.com/Duck-quack.mp3");
+    var kirby_snd = new Audio("https://aicore-files.s3.amazonaws.com/Kirby.mp3");
+    var pika_snd = new Audio("https://aicore-files.s3.amazonaws.com/Pikachu.mp3");
     snd.loop = false;
     let model, webcam, labelContainer, maxPredictions;
 
@@ -57,17 +59,30 @@
             labelContainer.childNodes[i].innerHTML = classPrediction;
         }
         if (prediction[1].probability > 0.7){
-            beep();
+            kirby_beep();
         } else {
-            beep_stop();
+            kirby_stop();
+        }
+        if (prediction[2].probability > 0.7){
+            pika_beep();
+        } else {
+            pika_stop();
         }
     }
     
-    function beep() {
-        snd.play();
+    function kirby_beep() {
+        kirby_snd.play();
     }
-    function beep_stop() {
-        snd.pause();
-        snd.currentTime = 0;
+    function kirby_stop() {
+        kirby_snd.pause();
+        kirby_snd.currentTime = 0;
+    }
+
+    function pika_beep() {
+        kirby_snd.play();
+    }
+    function pika_stop() {
+        kirby_snd.pause();
+        kirby_snd.currentTime = 0;
     }
 </script>
